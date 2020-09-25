@@ -17,11 +17,11 @@ public class LineComparison {
 		x1=sc.nextInt();
 		y1=sc.nextInt();
 		
-		System.out.println("Enter the first coordinate (x2,y2) of line");
+		System.out.println("Enter the second coordinate (x2,y2) of line");
 		x2=sc.nextInt();
 		y2=sc.nextInt();
 		
-		Length=Math.sqrt( ((x2-x1)^2) + ((y2-y1)^2) );
+		Length=Math.sqrt( ((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)) );
 		
 		System.out.println("Length of light is "+Length);
 	}
