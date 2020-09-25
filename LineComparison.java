@@ -36,11 +36,19 @@ public class LineComparison {
 		Length1=Math.sqrt( ((x12-x11)*(x12-x11)) + ((y12-y11)*(y12-y11)) );
 		Length2=Math.sqrt( ((x22-x21)*(x22-x21)) + ((y22-y21)*(y22-y21)) );
 		
-		if(Length1.equals(Length2))
+		if(Length1.compareTo(Length2)==0) {
 		
 		System.out.println("Lines are equal");
+		}
 		
-		else System.out.println("lines are not equal");
+		else {
+			
+			if(Length1.compareTo(Length2)>0)
+				System.out.println("line 1 is bigger than line 2");
+			
+			else System.out.println("line 2 is bigger then line 1");
+		}
+		
 	}
 
 }
