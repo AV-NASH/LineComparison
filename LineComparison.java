@@ -7,48 +7,49 @@ public class LineComparison {
 	public static void main(String[] args) {
 		
 		System.out.println("Welcome to line comparison problem\n");
+	    LineCompare();	
+		}
 		
+	
+	public static double lengthCalculator() {
 		Scanner sc=new Scanner(System.in);
-		int x11,y11;
-		int x12,y12;
+		int x1,y1;
+		int x2,y2;
+		Double Length;
 		
-		int x21,y21;
-		int x22,y22;
-		Double Length1,Length2;
+		System.out.println("Enter the first coordinate (x1,y1) of line");
+		x1=sc.nextInt();
+		y1=sc.nextInt();
 		
-		System.out.println("Enter the first coordinate (x11,y11) of line1");
-		x11=sc.nextInt();
-		y11=sc.nextInt();
+		System.out.println("Enter the second coordinate (x2,y2) of line1");
+		x2=sc.nextInt();
+		y2=sc.nextInt();
 		
-		System.out.println("Enter the second coordinate (x12,y12) of line1");
-		x12=sc.nextInt();
-		y12=sc.nextInt();
+		Length=Math.sqrt( ((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)) );
 		
+		return Length;
+	}
+	
+	public static void LineCompare() {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Please enter deatails of line 1");
+		Double Length1= lengthCalculator();
 		
-		System.out.println("Enter the first coordinate (x21,y21) of line2");
-		x21=sc.nextInt();
-		y21=sc.nextInt();
-		
-		System.out.println("Enter the second coordinate (x22,y22) of line2");
-		x22=sc.nextInt();
-		y22=sc.nextInt();
-		
-		Length1=Math.sqrt( ((x12-x11)*(x12-x11)) + ((y12-y11)*(y12-y11)) );
-		Length2=Math.sqrt( ((x22-x21)*(x22-x21)) + ((y22-y21)*(y22-y21)) );
+		System.out.println("Please enter deatails of line 2");
+		Double Length2= lengthCalculator();
 		
 		if(Length1.compareTo(Length2)==0) {
-		
-		System.out.println("Lines are equal");
-		}
-		
-		else {
 			
-			if(Length1.compareTo(Length2)>0)
-				System.out.println("line 1 is bigger than line 2");
+			System.out.println("Lines are equal");
+			}
 			
-			else System.out.println("line 2 is bigger then line 1");
+			else {
+				
+				if(Length1.compareTo(Length2)>0)
+					System.out.println("line 1 is bigger than line 2");
+				
+				else System.out.println("line 2 is bigger then line 1");
 		}
-		
-	}
 
-}
+	}
+}	
